@@ -1,0 +1,33 @@
+﻿@model List<ExportPDFandExcel.NetCore.Controllers.ExportController.StudentModel>
+
+
+
+<div class="row">
+    <a asp-action="ExportExcel" asp-controller="Export" class="btn btn-primary">Export Excel</a>
+    <a asp-action="ExportPDF" asp-controller="Export" class="btn btn-primary">Export PDF</a>
+</div>
+<div class="row">
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Grade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
